@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/bank.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.core.min.js"></script>
+    </head>
+  <body>
+        <div id="paper">
+            <div id="header">
+                <h1>Einzahlung / Auszahlung / Überweisung</h1>
+                <img src="assets/images/fleeca.png" draggable="false" class="to-start"/>
+            </div>
+            <div id="content">
+                <div id="home">
+                    <div id="welcome-text">
+                        <p id="welcome">Willkommen bei der FiveBank!</p>
+                        <p>Drücke einen Knopf<br />Um eine Transaktion abzuschliessen, nochmal auf den selben Button drücken wie einbezahlt.</p>
+                    </div>
+                    <form id="pincode-form">
+                        <h2>Geheimzahl ändern</h2>
+                        <div class="input-field">
+                            <p class="label">Aktuelle Geheimzahl</p>
+                            <input id="pincode-current" type="password" minlength="4" maxlength="4" required/>
+                        </div>
+                        <div class="input-field small">
+                            <p class="label">Neue Geheimzahl</p>
+                            <input id="pincode-new" type="password" minlength="4" maxlength="4" required/>
+                        </div>
+                        <div class="input-field small">
+                            <p class="label">Bestätige Geheimzahl</p>
+                            <input id="pincode-confirm" type="password" minlength="4" maxlength="4" required />
+                        </div>
+                        <button class="btn-flat waves-effect" id="pincode-submit">Ändern</button>
+                    </form>
+                </div>
+                <form id="transaction-form">
+                    <h2>Sender</h2>
+                    <div class="input-field small">
+                        <p class="label">Vorname</p>
+                        <input class="firstname" disabled/>
+                    </div>
+                    <div class="input-field small">
+                        <p class="label">Nachname</p>
+                        <input class="lastname" disabled/>
+                    </div>
+                    <div class="input-field">
+                        <p class="label">Kontonummer</p>
+                        <input id="senderAcc" disabled/>
+                    </div>
+                    <div class="input-field">
+                        <p class="label">Organisation number</p>
+                        <input disabled/>
+                    </div>
+                    <h2>Empfänger</h2>
+                    <div class="input-field">
+                        <p class="label">Kontonummer</p>
+                        <input id="receiverAcc" value="" required/>
+                    </div>
+                    <div class="input-field">
+                        <p class="label">Organisation number</p>
+                        <input id="orgnumb" value=""/>
+                    </div>
+                    <hr />
+                    <div class="input-field">
+                        <p class="label">Menge</p>
+                        <input id="transfer-amount" pattern="[0-9]" required/>
+                    </div>
+                    <p class="saldo">Kontostand: </p>
+                </form>
+                <form id="take-form">
+                    <h2>Ein- / Auszahlung</h2>
+                    <div class="input-field small">
+                        <p class="label">Vorname</p>
+                        <input class="firstname" disabled/>
+                    </div>
+                    <div class="input-field small">
+                        <p class="label">Nachname</p>
+                        <input class="lastname" disabled/>
+                    </div>
+                    <div class="input-field">
+                        <p class="label">Kontonummer</p>
+                        <input value="" disabled id="takeAcc"/>
+                    </div>
+                    <div class="input-field">
+                        <p class="label">Organisation number</p>
+                        <input value="223456-0231" disabled/>
+                    </div>
+                    <hr />
+                    <div class="input-field">
+                        <p class="label">Menge</p>
+                        <input id="take-amount" pattern="[0-9]{3}" required/>
+                    </div>
+                    <p class="saldo">Kontostand: </p>
+                </form>
+                <div id="footer">
+                    <button class="btn-flat waves-effect" id="deposit">Einzahlen</button>
+                    <button class="btn-flat waves-effect" id="withdraw">Abheben</button>
+                    <button class="btn-flat waves-effect" id="transfer">Überweisen </button>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jquery.js" type="text/javascript"></script>
+        <script src="assets/js/materialize.js" type="text/javascript"></script>
+        <script src="assets/js/init.js" type="text/javascript"></script>
+        <script src="assets/js/bank.js" type="text/javascript"></script>
+    </body>
+</html>
